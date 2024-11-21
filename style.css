@@ -2034,6 +2034,8 @@ fieldset:disabled .btn {
 .navbar-vertical .card .nav-tabs .nav-link:not(.active) {
     border-color: transparent;
 }
+
+
 @media (max-width: 767px){
     .navbar-absolute-sm-top {
         position: absolute;
@@ -2045,35 +2047,39 @@ fieldset:disabled .btn {
     .nav-item > .dropdown-menu .dropdown-menu {
         display: none !important;
     }
-   
+
 
     .nav-item > .dropdown-menu:not(.dropdown-menu .dropdown-menu ) {
 
         position: relative !important;
     }
-    
-    
+
+
     .nav-item .dropdown-item.dropdown-toggle:focus + .dropdown-menu {
         display: block !important;
         position: absolute !important;
-     
+
     }
 
-    .nav-item .dropdown-item.dropdown-toggle:focus-within + .dropdown-menu,
-    .nav-item .dropdown-item.dropdown-toggle:focus + .dropdown-menu {
+    .nav-item .dropdown-item.dropdown-toggle:focus + .dropdown-menu,
+    .nav-item .dropdown-item.dropdown-toggle:focus-within + .dropdown-menu {
         display: block !important;
         position: absolute !important;
+        left: 150px;
     }
 
-    /* Keep the Authentication dropdown open while interacting with it */
+
     .nav-item .dropdown-menu:focus-within {
         display: block !important;
     }
     .nav-item .dropdown-item.dropdown-toggle:not(:focus):not(:focus-within) + .dropdown-menu .dropdown-menu{
         display: none !important;
     }
-    
-    
+    .nav-item .dropdown-menu {
+        pointer-events: auto;
+    }
+
+
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .navbar-absolute-md-top {
@@ -2086,36 +2092,40 @@ fieldset:disabled .btn {
 
     .nav-item > .dropdown-menu .dropdown-menu {
         display: none !important;
+
     }
-   
+
 
     .nav-item > .dropdown-menu:not(.dropdown-menu .dropdown-menu ) {
 
         position: relative !important;
     }
-    
-    
-    .nav-item .dropdown-item.dropdown-toggle:focus + .dropdown-menu {
+
+
+    .nav-item .dropdown-item.dropdown-toggle:focus + .dropdown-menu,
+    .nav-item .dropdown-item.dropdown-toggle:focus-within + .dropdown-menu {
         display: block !important;
         position: absolute !important;
-     
+        left: 150px;
     }
 
-    .nav-item .dropdown-item.dropdown-toggle:focus-within + .dropdown-menu,
-    .nav-item .dropdown-item.dropdown-toggle:focus + .dropdown-menu {
-        display: block !important;
-        position: absolute !important;
-    }
 
-    /* Keep the Authentication dropdown open while interacting with it */
     .nav-item .dropdown-menu:focus-within {
         display: block !important;
     }
     .nav-item .dropdown-item.dropdown-toggle:not(:focus):not(:focus-within) + .dropdown-menu .dropdown-menu{
         display: none !important;
+
     }
-        
+
+    .nav-item .dropdown-menu {
+        pointer-events: auto;
+    }
+
 }
+
+
+
 @media (min-width: 992px) {
     .navbar-absolute-lg-top {
         position: absolute;
@@ -2127,21 +2137,19 @@ fieldset:disabled .btn {
         position: relative !important;
     }
 
-    .dropdown-menu {
-        left: 0 !important;
-        right: auto !important;
-        transform: none !important;
-        z-index: 1000 !important;
-
+    .nav-item > .dropdown-menu .dropdown-menu:hover {
+        display: block !important;
     }
 
-    .nav-item:hover .dropdown-menu {
+
+
+    .nav-item:hover > .dropdown-menu:not(.dropdown-menu .dropdown-menu ):not(.nav-item:hover .dropdown-menu-demo):not(.nav-item:hover .dropdown-menu-docs)  {
         display: block !important;
         position: absolute !important;
-        top: 100% !important; 
-        left: 0 !important; 
-        width: max-content !important; 
-        z-index: 1000 !important; 
+        top: 100% !important;
+        left: 0 !important;
+        width: max-content !important;
+        z-index: 1000 !important;
         transform: translateX(-20%)!important;
     }
 
@@ -2149,26 +2157,22 @@ fieldset:disabled .btn {
         display: block !important;
         position: absolute !important;
         top: 33px !important;
-        left: 100% !important; /* Aligns to the right of the main dropdown */
-        margin-left: 5px !important; /* Adjust for seamless alignment */
+        left: 100% !important;
+        margin-left: 5px !important;
         z-index: 1000 !important;
         width: max-content !important;
         transform: translateY(-10%) !important;
     }
-    
-    /* Prevent "Authentication" submenu from opening when hovering over "Account" */
-    .nav-item:hover > .dropdown-menu .dropdown-menu {
-        display: none !important;
-    }
+
 
     .nav-item:hover .dropdown-menu-demo{
         display: block !important;
         position: absolute !important;
-        top: 100% !important; 
+        top: 100% !important;
         left: -600px !important;
         width: 900px !important;
         max-width: 1650px !important;
-        z-index: 1000 !important; 
+        z-index: 1000 !important;
         transform: translateX(-20%)!important;
 
     }
@@ -2176,27 +2180,15 @@ fieldset:disabled .btn {
     .nav-item:hover .dropdown-menu-docs{
         display: block !important;
         position: absolute !important;
-        top: 100% !important; 
+        top: 100% !important;
         left: -200px !important;
         width: max-content !important;
         max-width: 250px !important;
-        z-index: 1000 !important; 
+        z-index: 1000 !important;
         transform: translateX(-10%)!important;
 
     }
 
-    
-/*
-    .nav-item:hover .dropdown-menu {
-        display: block!important;
-        left: 50%!important;
-        transform: translateX(-50%)!important;
-    }
-
-*/
-
-
-    
 
 }
 
@@ -2214,21 +2206,19 @@ fieldset:disabled .btn {
         position: relative !important;
     }
 
-    .dropdown-menu {
-        left: 0 !important;
-        right: auto !important;
-        transform: none !important;
-        z-index: 1000 !important;
-
+    .nav-item > .dropdown-menu .dropdown-menu:hover {
+        display: block !important;
     }
 
-    .nav-item:hover .dropdown-menu {
+
+
+    .nav-item:hover > .dropdown-menu:not(.dropdown-menu .dropdown-menu ):not(.nav-item:hover .dropdown-menu-demo):not(.nav-item:hover .dropdown-menu-docs) {
         display: block !important;
         position: absolute !important;
-        top: 100% !important; 
-        left: 0 !important; 
-        width: max-content !important; 
-        z-index: 1000 !important; 
+        top: 100% !important;
+        left: 0 !important;
+        width: max-content !important;
+        z-index: 1000 !important;
         transform: translateX(-20%)!important;
     }
 
@@ -2236,26 +2226,22 @@ fieldset:disabled .btn {
         display: block !important;
         position: absolute !important;
         top: 33px !important;
-        left: 100% !important; /* Aligns to the right of the main dropdown */
-        margin-left: 5px !important; /* Adjust for seamless alignment */
+        left: 100% !important;
+        margin-left: 5px !important;
         z-index: 1000 !important;
         width: max-content !important;
         transform: translateY(-10%) !important;
     }
-    
-    /* Prevent "Authentication" submenu from opening when hovering over "Account" */
-    .nav-item:hover > .dropdown-menu .dropdown-menu {
-        display: none !important;
-    }
+
 
     .nav-item:hover .dropdown-menu-demo{
         display: block !important;
         position: absolute !important;
-        top: 100% !important; 
+        top: 100% !important;
         left: -650px !important;
         width: 1000px !important;
         max-width: 1650px !important;
-        z-index: 1000 !important; 
+        z-index: 1000 !important;
         transform: translateX(-20%)!important;
 
     }
@@ -2263,39 +2249,39 @@ fieldset:disabled .btn {
     .nav-item:hover .dropdown-menu-docs{
         display: block !important;
         position: absolute !important;
-        top: 100% !important; 
+        top: 100% !important;
         left: -200px !important;
         width: max-content !important;
         max-width: 250px !important;
-        z-index: 1000 !important; 
+        z-index: 1000 !important;
         transform: translateX(-10%)!important;
 
     }
-    
+
 }
+
 @media (min-width: 1400px) {
-    
-    
+
+
     .navbar-absolute-xxl-top {
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
     }
-    
 
-    
     .nav-item {
         position: relative !important;
     }
-    
-    /* Hide all dropdown menus by default */
-    .dropdown-menu {
-        display: none !important;
+
+    .nav-item > .dropdown-menu .dropdown-menu:hover {
+        display: block !important;
+        top: 0.5px !important;
     }
+
     
     /* Show only the main dropdown (like Account) on hover */
-    .nav-item:hover > .dropdown-menu {
+    .nav-item:hover > .dropdown-menu:not(.dropdown-menu .dropdown-menu ):not(.nav-item:hover .dropdown-menu-demo):not(.nav-item:hover .dropdown-menu-docs) {
         display: block !important;
         position: absolute !important;
         top: 100% !important;
@@ -2303,7 +2289,9 @@ fieldset:disabled .btn {
         width: max-content !important;
         z-index: 1000 !important;
     }
-    
+
+
+
     /* Show only the "Authentication" submenu when hovering over "Authentication" */
     .nav-item .dropdown-item.dropdown-toggle:hover + .dropdown-menu {
         display: block !important;
@@ -2315,20 +2303,17 @@ fieldset:disabled .btn {
         width: max-content !important;
         transform: translateY(-10%) !important;
     }
-    
-    /* Prevent "Authentication" submenu from opening when hovering over "Account" */
-    .nav-item:hover > .dropdown-menu .dropdown-menu {
-        display: none !important;
-    }
+
+
 
     .nav-item:hover .dropdown-menu-demo{
         display: block !important;
         position: absolute !important;
-        top: 100% !important; 
+        top: 100% !important;
         left: -600px !important;
         width: 1100px !important;
         max-width: 1650px !important;
-        z-index: 1000 !important; 
+        z-index: 1000 !important;
         transform: translateX(-20%)!important;
 
     }
@@ -2336,11 +2321,11 @@ fieldset:disabled .btn {
     .nav-item:hover .dropdown-menu-docs{
         display: block !important;
         position: absolute !important;
-        top: 100% !important; 
+        top: 100% !important;
         left: -150px !important;
         width: max-content !important;
         max-width: 250px !important;
-        z-index: 1000 !important; 
+        z-index: 1000 !important;
         transform: translateX(-10%)!important;
 
     }
